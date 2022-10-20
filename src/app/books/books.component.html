@@ -1,0 +1,12 @@
+<h1>Programming Books List!</h1>
+
+<button (click)="isShowing = !isShowing">
+    <ng-container *ngIf="isShowing">Close</ng-container>
+    <ng-container *ngIf="!isShowing">Show</ng-container>
+</button>
+
+<ul *ngIf="isShowing" class="flex flex-wrap justify-around">
+    <ng-container *ngFor="let singleBook of books;">
+        <app-book [book]="singleBook"></app-book>
+    </ng-container>
+</ul>

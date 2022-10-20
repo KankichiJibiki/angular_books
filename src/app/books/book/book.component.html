@@ -1,0 +1,8 @@
+<li class="w-60 border rounded-lg mx-auto p-5">
+    <!-- <p class="sno">{{ i+1 }}</p> -->
+    <img [src]="book.image" [alt]="book.name" width="100px">
+    <p class="title">{{ book.name | titlecase }} by {{ book.author | titlecase }}</p>
+    <p class="currency">{{ book.amount | currency }}</p>
+    <button *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+    <button *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+</li>
